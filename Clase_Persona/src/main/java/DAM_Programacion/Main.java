@@ -20,7 +20,35 @@ public class Main {
         Persona.contador++;
 
         IO.println(p3.presentar());
+
+        //Miembros estáticos
         IO.println("en el sistema hay: " + Persona.contador + "personas");
+        IO.println(Persona.MAX_EDAD);
+
+        //Heap  y Stack
+        Persona p4 = p;
+        IO.println(p4.getNombre());
+        p4.setNombre("Pepiño");
+        IO.println("Nombre de p: " + p.getNombre());
+
+        //LLamada a método, los parametros se pasan por valor
+        int a1=5;
+        int b1 = 3;
+        int resultado = operacion(a1,b1);
+        IO.println("valores de a1 y b1 despues de ejecutar la funcion: "+ a1+", "+b1);
+
+        //LLamada a método con objeto
+        operacionPersona(p);
+        IO.println("Nombre de p: " + p.getNombre());
     }
-}
+        //paso de parámetros por copia (valor)
+        public static int operacion(int a, int b){
+            a = 2* a;
+            return a + b;
+        }
+        public static void operacionPersona (Persona p){
+            p.setNombre("mouriño");
+        }
+    }
+
 
