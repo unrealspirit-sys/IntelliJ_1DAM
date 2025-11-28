@@ -5,8 +5,8 @@ public class Persona {
     private String apellidos;
     private String nif;
     private int edad;
-    public static int contador;//<-- un static antes del tipo  de variable, deja un solo valor para todas las instancias
-
+    public static int contador;//<-- un static antes del tipo  de variable deja un solo valor para todas las instancias
+    public static int MAX_EDAD = 130;
     public Persona(String nombre, String apellidos, String nif, int edad) {
         this.nombre = nombre;
         this.apellidos = apellidos;
