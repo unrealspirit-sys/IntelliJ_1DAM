@@ -4,15 +4,15 @@ teórica el 40%.
 Hacer un programa leerá el nombre de un alumno y sus tres notas y mostrará
 Nota final de [NOMBRE] es [NOTA FINAL].
 */
-
+/* Funcion para leer por teclado, retorna la nota si es un double, si no pone un double retornará 999, lo q sabemos q no puede ser válido en ningun instituto.
+*
+ */
 import java.util.Scanner;
 
 public class metodoCalcular3Notas {
     public static void main(String[] args) {
         //Pedir datos
-        IO.println("Introduce el nombre del alumno");
-        Scanner sc = new Scanner(System.in);
-        String alumno = sc.nextLine();
+       String alumno = leerNombre("Introduce tu nombre");
         double notaPracticas = leerDouble("Introduce la nota de las prácticas: ");// LLamamos al metodo leerDouble 3 veces, 1 por cada argumento q necesitamos en el metodo notasAlumno
         double notaPracticas2 = leerDouble("Introduce la nota de los problemas: ");
         double notaPracticas3= leerDouble("Introduce la nota de la teorica: ");
@@ -20,7 +20,14 @@ public class metodoCalcular3Notas {
         notasAlumno(alumno,notaPracticas,notaPracticas2,notaPracticas3);
 
     }
-    //Metodo para leer los double del metodo operacion
+    //Metodo leerNombre, para leer el nombre en el metodo notasAlumno
+    static String leerNombre(String mensaje){
+        Scanner sc = new Scanner(System.in);
+        IO.print (mensaje + ": ");
+        return sc.nextLine();
+    }
+    //Metodo para leer las notas
+
     static double leerDouble(String mensaje){
         Scanner sc = new Scanner(System.in);
         IO.println(mensaje);
@@ -28,10 +35,12 @@ public class metodoCalcular3Notas {
         if (sc.hasNextDouble()) retorno = sc.nextDouble(); //aseguramos que el usuario pone un numero con el hasnextdouble y si es asi lo guardamos en la variable retorno
         return retorno;
     }
-    //metodo operacion
+    //metodo operaciones para calcular la nota final
     public static void notasAlumno(String alumno, double practica, double problemas, double teorica) {
         // operaciones
+        if (practica != -99 && problemas !=-99 && teorica != -99){
          double notaFinal = (double) practica * 0.10 + problemas * 0.50 + teorica * 0.40;
          IO.println(" La nota final de "+ alumno+ " es: "+ notaFinal);
+        }
     }
 }
