@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Metodo_mayor_que {
+public class Mayor_que {
     /*Escribe un programa que lea dos números por teclado, y diga cuál es el mayor. También si ambos son iguales.
 En caso de que uno o ambos de los números introducidos son inválidos, se da un mensaje de error.
 Ejemplo:
