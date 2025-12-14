@@ -85,11 +85,11 @@ public class Coche {
 
 
     }
-    //Metodo acelerar +10
+    //Metodo acelerar
         //No se permite acelerar a mas de 350
     public String acelerar() {
-        int nuevaVelocidad = velocidad + 10;
-        if (nuevaVelocidad <= 350)
+        int nuevaVelocidad = velocidad + 25;
+        if (nuevaVelocidad <= 200)
             velocidad=nuevaVelocidad;
         return "Velocidad actual: " + velocidad + "km/h";
     }
@@ -100,22 +100,21 @@ public class Coche {
             if (nuevaVelocidad < 300)
                 velocidad=nuevaVelocidad;
 
-            return "Velocidad actual: " + velocidad + "km/h";
+            return "Velocidad actual acelerando: " + velocidad + "km/h";
         }
     //Metodo freno
     public String frenar (){
-        int nuevaVelocidad = velocidad -10;
+        int nuevaVelocidad = velocidad -25;
         if (nuevaVelocidad >= 0)
             velocidad = nuevaVelocidad;
-        return "Velocidad actual " + velocidad + "km/h";
+        return "Velocidad actual al frenar" + velocidad + "km/h";
     }
     //Decremento en valor la velocidad
         public String frenar (int valor){
            int nuevaVelocidad = velocidad - valor;
-            if (nuevaVelocidad >= 0)
-            velocidad = nuevaVelocidad;
-            return "Velocidad actual: " + velocidad + "km/h";
-
+            if (nuevaVelocidad < 0)
+            velocidad = 0;
+            return "Velocidad actual frenando: " + velocidad + "km/h";
         }
 }
 

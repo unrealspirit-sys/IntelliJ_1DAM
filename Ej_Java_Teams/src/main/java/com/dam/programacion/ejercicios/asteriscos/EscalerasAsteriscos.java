@@ -1,3 +1,4 @@
+package com.dam.programacion.ejercicios.asteriscos;
 
 import java.util.Scanner;
 

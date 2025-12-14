@@ -1,6 +1,8 @@
+package com.dam.programacion.ejercicios.EjerciciosMicrosoftTeams;
+
 import java.util.Scanner;
 
-public class Ejercicios_teams_17_11_2025 {
+public class Ejercicios17Nov2025 {
     public static void main() {
         /*
          * Utilizando la función readln() y readln(String prompt), ya podéis hacer los
@@ -38,64 +40,71 @@ public class Ejercicios_teams_17_11_2025 {
             IO.println(num1 + " y " + num2 + " son iguales. ");
         }
 
+        /*
+         * Ejercicio 8 Hecho con ayuda de IA
+         * IO.println("Escribe 5 numeros consecutivamente");
+         * double suma = 0;
+         * for (int i = 0; i < 5; i++) {
+         * double numerosElegidos = lector.nextDouble();
+         * suma += numerosElegidos;
+         * }
+         * double media = (double) suma / 5;
+         * IO.println("Tus numeros suman: " + suma + " y hacen una media de: " + media);
+         * lector.nextLine(); <--Depurar
+         */
+        // Ejercicio 8 Hecho con Victor
+        // int suma=0;
+        // final int MAX=5 ;
+        // double media;
+        // for (int i=1; i<=MAX; i++){
+        // Scanner sc = new Scanner(System.in); //<-- SI creamos la clase scanner dentro
+        // del for, ya se depura solo en cada iteracion.
+        // IO.println("Introduce el numero " + i +":");
+        //
+        // if (sc.hasNextInt()){
+        // suma += sc.nextInt();
+        // IO.println("Total:" + suma);
+        // }
+        // } media = (double) suma / MAX;
+        // IO.println("media es: "+ media);
 
-        /*Ejercicio 8  Hecho con ayuda de IA
-        IO.println("Escribe 5 numeros consecutivamente");
-        double suma = 0;
-        for (int i = 0; i < 5; i++) {
-            double numerosElegidos = lector.nextDouble();
-            suma += numerosElegidos;
-        }
-        double media = (double) suma / 5;
-        IO.println("Tus numeros suman: " + suma + " y hacen una media de: " + media);
-        lector.nextLine(); <--Depurar*/
-            //Ejercicio 8 Hecho con Victor
-//             int suma=0;
-//             final int  MAX=5 ;
-//            double media;
-//            for (int i=1; i<=MAX; i++){
-//                Scanner sc = new Scanner(System.in); //<-- SI creamos la clase scanner dentro del for, ya se depura  solo en cada iteracion.
-//                IO.println("Introduce el numero " + i +":");
-//
-//                if (sc.hasNextInt()){
-//                    suma += sc.nextInt();
-//                    IO.println("Total:" + suma);
-//                }
-//            } media = (double) suma / MAX;
-//            IO.println("media es: "+ media);
-
-            // Ejercicio 9
+        // Ejercicio 9
         String nombre, apellido1, apellido2, provincia;
         int telefono, edad;
         Scanner sc = new Scanner(System.in);
         IO.println(" Introduce el nombre: ");
         nombre = sc.next();
         IO.println(" Introduce el apellido: ");
-        apellido1=sc.next();
+        apellido1 = sc.next();
         IO.println(" Introduce el segundo apellido: ");
-        apellido2=sc.next();
+        apellido2 = sc.next();
         IO.println(" Introduce el telefono: ");
-        if (sc.hasNextInt()){
-            telefono = sc.nextInt();}
-        else {
-            telefono =-1;
+        if (sc.hasNextInt()) {
+            telefono = sc.nextInt();
+        } else {
+            telefono = -1;
             sc.next();
         }
         IO.println(" Introduce la edad: ");
-        if (sc.hasNextInt()){
-            edad = sc.nextInt();}
-        else {
-            edad =-1;
+        if (sc.hasNextInt()) {
+            edad = sc.nextInt();
+        } else {
+            edad = -1;
             sc.next();
         }
         IO.println("Introduce la provincia: ");
         provincia = sc.next();
-        //Mostrar datos por pantalla
-        IO.println("Datos introducidos: "+"Nombre: "+ nombre + " "+ apellido1+ " "+ apellido2 +" ,telefono " + telefono + " ,edad "+ edad + " ,provincia: "+provincia );
-        if ( telefono !=-1) IO.println("telefono correcto");
-        else IO.println("N/A");
-        if (edad != -1) IO.println("edad correcta");
-        else IO.println("N/A");
+        // Mostrar datos por pantalla
+        IO.println("Datos introducidos: " + "Nombre: " + nombre + " " + apellido1 + " " + apellido2 + " ,telefono "
+                + telefono + " ,edad " + edad + " ,provincia: " + provincia);
+        if (telefono != -1)
+            IO.println("telefono correcto");
+        else
+            IO.println("N/A");
+        if (edad != -1)
+            IO.println("edad correcta");
+        else
+            IO.println("N/A");
 
         // Ejercicio 10
         IO.println("\nEscribe números (escribe una letra para terminar):");
@@ -124,20 +133,20 @@ public class Ejercicios_teams_17_11_2025 {
         // else IO.println("los numeros son iguales ");
     }
 
-    public static int leerEntero(int n) { //funcion para leer un entero positivo (devolviendo entero) y lo muestra por pantalla
-            Scanner lector = new Scanner(System.in);
-            IO.println("Introduce un número entero");
+    public static int leerEntero(int n) { // funcion para leer un entero positivo (devolviendo entero) y lo muestra por
+                                          // pantalla
+        Scanner lector = new Scanner(System.in);
+        IO.println("Introduce un número entero");
 
-            //Comprobar entrada antes de procesar
-            if ( lector.hasNextInt()) {
-             n = lector.nextInt();
-             IO.println("Has introducido "+n);
-                return  n;
-            }
-            else {
-                lector.next();
-                IO.println(" Introduce un número entero válido");
-            }
+        // Comprobar entrada antes de procesar
+        if (lector.hasNextInt()) {
+            n = lector.nextInt();
+            IO.println("Has introducido " + n);
+            return n;
+        } else {
+            lector.next();
+            IO.println(" Introduce un número entero válido");
+        }
         return -1;
     }
 }
